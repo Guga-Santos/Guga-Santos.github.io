@@ -158,7 +158,7 @@ yellowPick.onload = yellowPick.style.backgroundColor = `rgb(${random7},${random8
 //   yellowPick.style.backgroundColor = cor4.value
 // })
 
-const soundIcon = document.querySelector('#sound-icon');
+const soundIcon = document.querySelector('#soundIcon');
 
 soundIcon.addEventListener('click', () => {
   if(soundIcon.classList.value === '') {
