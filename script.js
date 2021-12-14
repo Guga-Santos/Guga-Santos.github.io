@@ -1,14 +1,6 @@
-window.onload = document.querySelector('#black').className += ' selected';
-
-// window.onload = document.querySelector('#board-size').value = 5
-// Inicia adicionando a classe 'selected' a id 'black' onde se encontra a div referente à cor preta.
-
 const pixelBoard = document.querySelector('#pixel-board');
-
 //
 let draw = false
-//
-
 function numeroGrid(n) {
   for (let i = 1; i <= n * n; i += 1) {
     const div = document.createElement('div');
@@ -37,10 +29,9 @@ window.addEventListener('mousedown', function(){
 window.addEventListener('mouseup', function(){
   draw = false
 })
-// Cria uma função com parâmetro 'n' (que será alterado para inputV.value na função acima), cria um laço for que irá percorrer de 1 até (n * n), que foi a maneira de dobrar n.
-// Pra cada iteração do for, ele cria uma div e adiciona à ela a classe 'pixel'.
-// Cria um evento que, após um clique, a div clicada receba o backgroundColor da cor que está com a classe 'selected'.
+//
 
+//
 function changeValue() {
   const inputV = document.querySelector('#board-size');
   const currentVal = inputV.value;
@@ -61,41 +52,33 @@ function changeValue() {
     document.querySelector('#pixel-board').style.gridTemplateRows = `repeat(${inputV.value}, 1fr)`;
   }
 }
-// Define que o value default, quando alterado e validado em button('genarate-board'), se torne o valor corrente.
-// Após a alternancia de valor, limpa o quadro de pixels ('pixelboard') e chama a função numeroGrid criando a quantidade de numeros e colunas definida pelo cliente.
-
-// const invalido = document.querySelector('#generate-board');
-
-// invalido.addEventListener('click', function(){
-//   const valor = document.querySelector('#board-size').value
-//   const quadrados = document.querySelector('#pixel-board').childElementCount
-
-//   if(valor == (quadrados/valor)) {
-//     alert('Board inválido!')
-//   }
-// })
-
+//
 window.onload = changeValue;
-// Chama a função changeValue que tem como valor default '5' e monta um quadrado de pixel de 5x5
+//
 
-const bluePick = document.querySelector('#blue');
-const redPick = document.querySelector('#red');
-const yellowPick = document.querySelector('#yellow');
-const blackPick = document.querySelector('#black');
+//
+const classTarget = document.querySelector('#color-palette');
 
-function selectedColor(event) {
+classTarget.addEventListener('click', (event) => {
   const selected = document.getElementsByClassName('selected')[0];
   selected.classList.remove('selected');
   event.target.classList.add('selected');
-}
-// Cria uma função que remove a classe 'selected' de onde ela estiver e adiciona onde há um evento click.
+})
+//
 
-blackPick.addEventListener('click', selectedColor);
-redPick.addEventListener('click', selectedColor);
-bluePick.addEventListener('click', selectedColor);
-yellowPick.addEventListener('click', selectedColor);
-// Adiciona a função selelectedColor ao caminho onde foi clicado.
+//
+const colorPicker = document.querySelector('#inputColor');
 
+colorPicker.addEventListener('change', () => {
+  const variavel = document.querySelector('#variavel');
+  const selected = document.getElementsByClassName('selected')[0];
+  selected.classList.remove('selected');
+  variavel.classList.add('selected')
+  variavel.style.backgroundColor = colorPicker.value
+})
+//
+
+//
 const button = document.querySelector('.button');
 
 function clearBoard() {
@@ -105,59 +88,17 @@ function clearBoard() {
   }
 }
 button.addEventListener('click', clearBoard);
+//
 
-const testes = document.querySelector('#board-size');
+//
+const boardSizeX = document.querySelector('#board-size');
 
-testes.addEventListener('click', () => {
+boardSizeX.addEventListener('click', () => {
   changeValue()
 })
+//
 
-const random1 = Math.floor(Math.random() * 255);
-const random2 = Math.floor(Math.random() * 255);
-const random3 = Math.floor(Math.random() * 255);
-
-const random4 = Math.floor(Math.random() * 255);
-const random5 = Math.floor(Math.random() * 255);
-const random6 = Math.floor(Math.random() * 255);
-
-const random7 = Math.floor(Math.random() * 255);
-const random8 = Math.floor(Math.random() * 255);
-const random9 = Math.floor(Math.random() * 255);
-// https://stackoverflow.com/questions/20790579/wont-math-floormath-random-255-generate-uneven-probabilities
-
-const paleta = document.querySelector('.color');
-
-blackPick.onload = blackPick.style.backgroundColor = 'rgb(0,0,0)';
-bluePick.onload = bluePick.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
-redPick.onload = redPick.style.backgroundColor = `rgb(${random4},${random5},${random6})`;
-yellowPick.onload = yellowPick.style.backgroundColor = `rgb(${random7},${random8},${random9})`;
-
-// https://www.w3schools.com/jsref/event_onload.asp
-
-// const cor1 = document.querySelector('#color1')
-
-// cor1.addEventListener('click', () => {
-//   blackPick.style.backgroundColor = cor1.value
-// })
-
-// const cor2 = document.querySelector('#color2')
-
-// cor2.addEventListener('click', () => {
-//   bluePick.style.backgroundColor = cor2.value
-// })
-
-// const cor3 = document.querySelector('#color3')
-
-// cor3.addEventListener('click', () => {
-//   redPick.style.backgroundColor = cor3.value
-// })
-
-// const cor4 = document.querySelector('#color4')
-
-// cor4.addEventListener('click', () => {
-//   yellowPick.style.backgroundColor = cor4.value
-// })
-
+//
 const soundIcon = document.querySelector('#soundIcon');
 
 soundIcon.addEventListener('click', () => {
@@ -171,7 +112,9 @@ soundIcon.addEventListener('click', () => {
     document.querySelector('#audio-container').innerHTML = '<audio autoplay src="./midia/SuperMarioBros.mp3"></audio>'
   }
 })
+//
 
+//
 const informacoes = document.querySelector('#informacoes');
 
 informacoes.addEventListener('click', () => {
@@ -181,3 +124,4 @@ informacoes.addEventListener('click', () => {
 informacoes.addEventListener('mouseleave', () => {
   informacoes.innerHTML = ''
 })
+//

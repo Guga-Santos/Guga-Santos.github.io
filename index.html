@@ -9,35 +9,46 @@
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/minecraftia" type="text/css"/>
 </head>
 <body>
-    <h1 id="title">PIXEL ART</h1>
-    <div id='color-palette'>
-        <div class='color' id="black"></div>
-        <div class='color' id="blue"></div>
-        <div class='color' id="red"></div>
-        <div class='color' id="yellow"></div>
-    </div>
+  <section id="leftSection">
     <div id="informacoes">
-
+  
     </div>
-    <!-- <div id="input-color-container">
-        <input class="input-color" id="color1" type="color" >
-        <input class="input-color" id="color2" type="color" >
-        <input class="input-color" id="color3" type="color" >
-        <input class="input-color" id="color4" type="color" >
-    </div> -->
-    <div id="pixel-board">
-    </div>
-    <div class="buttonDiv">
+  </section>
+  <section id="middleSection">
+      <h1 id="title">PIXEL ART</h1>
+      <div id='color-palette'>
+          <div class='color selected' style="background-color: black;"></div>
+          <div class='color' style="background-color: blue;"></div>
+          <div class='color' style="background-color: green;"></div>
+          <div class='color' style="background-color: yellow;"></div>
+          <div class='color' style="background-color: orange;"></div>
+          <div class='color' style="background-color: orangered;"></div>
+          <div class='color' style="background-color: red;"></div>
+          <div class='color' style="background-color: maroon;"></div>
+          <div class='color' style="background-color: indianred;"></div>
+          <div class='color' style="background-color: purple;"></div>
+          <div class='color' style="background-color: indigo;"></div>
+          <div class='color' style="background-color: grey;"></div>
+          <div class='color' style="background-color: gold;"></div>
+          <div class='color' style="background-color: silver;"></div>
+          <div class='color' style="background-color: white;"></div>
+          <div class='color' id="variavel" style="background-color: "></div>
+          <input class="color" id="inputColor" type="color">
+      </div>
+      <div id="pixel-board">
+      </div>
+      <div class="buttonDiv">
         <button class="button" id="clear-board" >Limpar</button>
-        <input class="button" id="board-size" type="number" min="1" max="50" value="10">
-        <!-- <button class="button" id="generate-board" onclick="changeValue()">VQV</button> -->
-        <div class="button" id="sound">
-            <img id="soundIcon" class="" src="./images/SoundOn.png" alt="Icone de audio off">
+         <input class="button" id="board-size" type="number" min="1" max="50" value="10">
+         <div class="button" id="sound">
+           <img id="soundIcon" class="" src="./images/SoundOn.png" alt="Icone de audio">
+         </div>
         </div>
-    </div>
-    <div id="audio-container">
-        <audio autoplay src="./midia/SuperMarioBros.mp3"></audio>
-    </div>
+        <div id="audio-container">
+            <audio autoplay src="./midia/SuperMarioBros.mp3"></audio>
+        </div>
+    </section>
+    <section id="rightSection"></section>
     <script src="script.js"></script>
 </body>
 </html>

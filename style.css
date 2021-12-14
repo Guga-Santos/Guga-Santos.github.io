@@ -1,20 +1,49 @@
-body {
+body{
+  background-image: url('https://wallpaperaccess.com/full/3052460.jpg');
+  background-size: 1280px 700px;
+  
+
+}
+#middleSection{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url('https://wallpaperaccess.com/full/3052460.jpg');
-  background-size: 1280px 700px;
+}
+
+#leftSection {
+  display: inline;
+  position: absolute;
+  width: 300px;
+  height: 550px;
+  background-color: transparent;
+  margin-right: 50px;
+  left: 140px;
+  /* border: 1px black solid; */
+
+}
+
+#rightSection {
+  display: inline;
+  position: absolute;
+  width: 300px;
+  height: 550px;
+  background-color: transparent;
+  margin-left: 50px;
+  margin-top: 0px;
+  left: 800px;
+  top: 10px;
+  /* border: 1px black solid; */
 }
 
 #title  {
   font-family: 'MinecraftiaRegular';
-  margin-top: 10px;
+  margin-top: 0px;
   font-size: 60px;
   font-weight: bold;
   font-style: normal;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   /* text-shadow:black 2px 2px 2px; */
 }
 
@@ -23,7 +52,7 @@ body {
   height: 80px;
   background-color: transparent;
   position: absolute;
-  left: 270px;
+  left: 125px;
   top: 250px;
 }
 
@@ -39,16 +68,28 @@ body {
   padding: 10px 10px 10px 10px;
 }
 
-.input-color {
+#inputColor {
   display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  height: 27px;
+  width: 134px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  bottom: 4px;
+  left: 1px;
+  position: relative;
+
 }
 
 .color {
-  border: black dashed 1px;
-  height: 50px;
-  width: 50px;
+  border: black solid 1px;
+  height: 25px;
+  width: 28px;
   display: inline-block;
-  margin-bottom: 5px;
+  box-shadow: black 1px 1px 1px;
 }
 
 #black {
@@ -68,8 +109,8 @@ body {
 }
 
 #pixel-board {
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 340px;
   display: grid;
   border: 4px dashed black;
   /* grid-template-rows: repeat(5, 1fr);
@@ -77,11 +118,7 @@ body {
 }
 
 #color-palette {
-  width: 300px;
-}
-
-.color {
-  width: 69px;
+  width: 350px;
 }
 
 .pixel {
@@ -118,6 +155,8 @@ body {
   display: inline-block;
   width: 23%;
   height: 32px;
+  text-align: center;
+  font-size: 14px;
  
 }
 
