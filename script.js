@@ -100,7 +100,7 @@ const button = document.querySelector('.button');
 function clearBoard() {
   const pixel = document.querySelectorAll('.pixel');
   for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.backgroundColor = 'white';
+    pixel[i].style.backgroundColor = 'grey';
   }
 }
 button.addEventListener('click', clearBoard);
