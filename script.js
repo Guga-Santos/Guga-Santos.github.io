@@ -11,7 +11,7 @@ let draw = false
 function numeroGrid(n) {
   for (let i = 1; i <= n * n; i += 1) {
     const div = document.createElement('div');
-    div.classList.add('pixel'); 
+    div.classList.add('pixel');
 
     div.addEventListener('mouseover', () => {
       const select = document.querySelector('.selected').style.backgroundColor;
@@ -47,7 +47,7 @@ function changeValue() {
 
   if (!inputV.value === true) {
     alert('Board inválido!');
-  } else if (inputV.value >= 5 && inputV.value <= 50) {
+  } else if (inputV.value >= 1 && inputV.value <= 50) {
     inputV.value = currentVal;
     pixelBoard.innerHTML = '';
     numeroGrid(inputV.value);
@@ -105,19 +105,11 @@ function clearBoard() {
 }
 button.addEventListener('click', clearBoard);
 
+const testes = document.querySelector('#board-size');
 
-const generate = document.querySelector('#generate-board');
-
-generate.addEventListener('click', () => {
-  const transfNumber = parseInt(document.querySelector('#board-size').value);
-  if (transfNumber < 5 && transfNumber > 0) {
-    document.querySelector('#board-size').value = '5';
-    changeValue();
-  } else if (transfNumber > 50) {
-    document.querySelector('#board-size').value = '50';
-    changeValue();
-  }
-});
+testes.addEventListener('click', () => {
+  changeValue()
+})
 
 const random1 = Math.floor(Math.random() * 255);
 const random2 = Math.floor(Math.random() * 255);
@@ -177,4 +169,14 @@ soundIcon.addEventListener('click', () => {
     soundIcon.classList = ''
     document.querySelector('#audio-container').innerHTML = '<audio autoplay src="./midia/SuperMarioBros.mp3"></audio>'
   }
+})
+
+const informacoes = document.querySelector('#informacoes');
+
+informacoes.addEventListener('click', () => {
+  informacoes.innerHTML = '<p id="paragrafo">Este site foi feito por <a href="https://github.com/Guga-Santos" target="_blank">Guga Santos</a> como parte da conclusão do bloco 5 do curso de desenvolvimento web da <a href="http://www.betrybe.com" target="_blank">@Trybe</a>. </p>'
+})
+
+informacoes.addEventListener('mouseleave', () => {
+  informacoes.innerHTML = ''
 })
