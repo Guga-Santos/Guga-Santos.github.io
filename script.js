@@ -11,7 +11,7 @@ let draw = false
 function numeroGrid(n) {
   for (let i = 1; i <= n * n; i += 1) {
     const div = document.createElement('div');
-    div.classList.add('pixel');
+    div.classList.add('pixel'); 
 
     div.addEventListener('mouseover', () => {
       const select = document.querySelector('.selected').style.backgroundColor;
@@ -105,37 +105,6 @@ function clearBoard() {
 }
 button.addEventListener('click', clearBoard);
 
-// Cria uma função que limpa os quadrados de classe 'pixel'.
-
-// blackPick.addEventListener('click', () => {
-//   blackPick.className = 'color selected black';
-//   redPick.className = 'color';
-//   yellowPick.className = 'color';
-//   bluePick.className = 'color';
-// });
-
-// bluePick.addEventListener('click', () => {
-//   bluePick.className = 'color selected blue';
-//   redPick.className = 'color';
-//   yellowPick.className = 'color';
-//   blackPick.className = 'color';
-// });
-
-// redPick.addEventListener('click', () => {
-//   redPick.className = 'color selected red';
-//   bluePick.className = 'color';
-//   yellowPick.className = 'color';
-//   blackPick.className = 'color';
-// });
-
-// yellowPick.addEventListener('click', () => {
-//   yellowPick.className = 'color selected yellow';
-//   redPick.className = 'color';
-//   bluePick.className = 'color';
-//   blackPick.className = 'color';
-// });
-
-// Havia feito da forma acima em comentário, porém, foi possível refatorar visualizando alguns outros código de amigos nas salas de estudos e nos próprios pullRequests.
 
 const generate = document.querySelector('#generate-board');
 
@@ -172,26 +141,40 @@ yellowPick.onload = yellowPick.style.backgroundColor = `rgb(${random7},${random8
 
 // https://www.w3schools.com/jsref/event_onload.asp
 
-const cor1 = document.querySelector('#color1')
+// const cor1 = document.querySelector('#color1')
 
-cor1.addEventListener('click', () => {
-  blackPick.style.backgroundColor = cor1.value
-})
+// cor1.addEventListener('click', () => {
+//   blackPick.style.backgroundColor = cor1.value
+// })
 
-const cor2 = document.querySelector('#color2')
+// const cor2 = document.querySelector('#color2')
 
-cor2.addEventListener('click', () => {
-  bluePick.style.backgroundColor = cor2.value
-})
+// cor2.addEventListener('click', () => {
+//   bluePick.style.backgroundColor = cor2.value
+// })
 
-const cor3 = document.querySelector('#color3')
+// const cor3 = document.querySelector('#color3')
 
-cor3.addEventListener('click', () => {
-  redPick.style.backgroundColor = cor3.value
-})
+// cor3.addEventListener('click', () => {
+//   redPick.style.backgroundColor = cor3.value
+// })
 
-const cor4 = document.querySelector('#color4')
+// const cor4 = document.querySelector('#color4')
 
-cor4.addEventListener('click', () => {
-  yellowPick.style.backgroundColor = cor4.value
+// cor4.addEventListener('click', () => {
+//   yellowPick.style.backgroundColor = cor4.value
+// })
+
+const soundIcon = document.querySelector('#sound-icon');
+
+soundIcon.addEventListener('click', () => {
+  if(soundIcon.classList.value === '') {
+  soundIcon.src = 'http://127.0.0.1:5500/images/SoundOn.png'
+  soundIcon.classList = 'soundOn'
+  document.querySelector('#audio-container').innerHTML = ''
+  } else if (soundIcon.classList.value === 'soundOn'){
+    soundIcon.src = 'http://127.0.0.1:5500/images/SoundOff.png'
+    soundIcon.classList = ''
+    document.querySelector('#audio-container').innerHTML = '<audio autoplay src="./midia/SuperMarioBros.mp3"></audio>'
+  }
 })
