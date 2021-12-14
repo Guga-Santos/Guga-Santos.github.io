@@ -118,7 +118,7 @@ body {
 }
 
 #sound {
-  width: 30px;
+  width: fit-content;
   height: 30px;
   background-color: lightcyan;
   display: inline-block;
