@@ -1,3 +1,13 @@
+// //
+// function openWin() {
+//   myWindow = window.open("", "", "width=100, height=100");
+//  }
+ 
+//  function resizeWin() {
+//     myWindow.resizeTo(250, 250);                            
+//      myWindow.focus();                                     
+//  }
+ //
 const pixelBoard = document.querySelector('#pixel-board');
 //
 let draw = false
@@ -109,7 +119,9 @@ soundIcon.addEventListener('click', () => {
   } else if (soundIcon.classList.value === 'soundOn'){
     soundIcon.src = './images/SoundOff.png'
     soundIcon.classList = ''
-    document.querySelector('#audio-container').innerHTML = '<audio autoplay src="./midia/SuperMarioBros.mp3"></audio>'
+    document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/SuperMarioBros.mp3"></audio>'
+    const audio = document.getElementById("myaudio");
+      audio.volume = 0.1;
   }
 })
 //

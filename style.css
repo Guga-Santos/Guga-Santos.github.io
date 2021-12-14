@@ -1,50 +1,51 @@
 body{
-  background-image: url('https://wallpaperaccess.com/full/3052460.jpg');
-  background-size: 1280px 700px;
+  width: 1380px;
+  height: 720;
+  width: 99%;
+  background-image: url(./images/marioBG.jpg);
+  background-size: cover;
+  padding: 0px;
+  
   
 
 }
 #middleSection{
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid black;
+  width: 35% ;
 }
 
 #leftSection {
-  display: inline;
-  position: absolute;
-  width: 300px;
+  display: inline-block;
+  width: 30%;
   height: 550px;
   background-color: transparent;
-  margin-right: 50px;
-  left: 140px;
-  /* border: 1px black solid; */
+
+  border: 1px black solid;
 
 }
 
 #rightSection {
-  display: inline;
-  position: absolute;
-  width: 300px;
+  display: inline-block;
+  width: 30%;
   height: 550px;
   background-color: transparent;
-  margin-left: 50px;
-  margin-top: 0px;
-  left: 800px;
-  top: 10px;
-  /* border: 1px black solid; */
+  margin-right: 0px;
+  border: 1px black solid;
 }
 
 #title  {
   font-family: 'MinecraftiaRegular';
+  text-align: center;
   margin-top: 0px;
   font-size: 60px;
   font-weight: bold;
   font-style: normal;
   color: white;
   margin-bottom: 5px;
-  /* text-shadow:black 2px 2px 2px; */
 }
 
 #informacoes {
@@ -66,6 +67,10 @@ body{
   color: white;
   font-family: 'MinecraftiaRegular';
   padding: 10px 10px 10px 10px;
+}
+
+#color-palette {
+  margin: auto;
 }
 
 #inputColor {
@@ -113,8 +118,7 @@ body{
   height: 340px;
   display: grid;
   border: 4px dashed black;
-  /* grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(5, 1fr); */
+  margin: 0 auto;
 }
 
 #color-palette {
@@ -131,6 +135,7 @@ body{
   height: 50px;
   margin: 0px;
   padding: 0px;
+  margin: auto;
   margin-top: 10px;
 }
 
