@@ -1,4 +1,6 @@
 window.onload = document.querySelector('#black').className += ' selected';
+window.onload = document.querySelector('#sound-icon').click()
+
 // window.onload = document.querySelector('#board-size').value = 5
 // Inicia adicionando a classe 'selected' a id 'black' onde se encontra a div referente à cor preta.
 
