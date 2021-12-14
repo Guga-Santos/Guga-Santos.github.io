@@ -14,7 +14,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 35% ;
 }
 
@@ -23,8 +23,7 @@ body{
   width: 30%;
   height: 550px;
   background-color: transparent;
-
-  border: 1px black solid;
+  /* border: 1px black solid; */
 
 }
 
@@ -34,7 +33,7 @@ body{
   height: 550px;
   background-color: transparent;
   margin-right: 0px;
-  border: 1px black solid;
+  /* border: 1px black solid; */
 }
 
 #title  {
