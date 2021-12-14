@@ -1,5 +1,5 @@
 window.onload = document.querySelector('#black').className += ' selected';
-window.onload = document.querySelector('#sound-icon').click()
+window.onload = document.querySelector('#audio-container').innerHTML = '<audio autoplay src="./midia/SuperMarioBros.mp3"></audio>'
 
 // window.onload = document.querySelector('#board-size').value = 5
 // Inicia adicionando a classe 'selected' a id 'black' onde se encontra a div referente à cor preta.
@@ -169,7 +169,7 @@ soundIcon.addEventListener('click', () => {
   } else if (soundIcon.classList.value === 'soundOn'){
     soundIcon.src = 'http://127.0.0.1:5500/images/SoundOff.png'
     soundIcon.classList = ''
-    document.querySelector('#audio-container').innerHTML = '<audio autoplay src="./midia/SuperMarioBros.mp3"></audio>'
+    
   }
 })
 
