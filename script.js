@@ -211,4 +211,27 @@ greenToddy.addEventListener('dblclick', () => {
   }
 })
 //
+const redToddy = document.querySelector('#redToddy');
+redToddy.addEventListener('dblclick', () => {
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+    redToddy.children[i].classList.value = 'pixel'
+   }
+  pixelBoard.innerHTML = redToddy.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   redToddy.children[i].classList.value = 'pixel-E'
+  }
+})
+//
+const redFlower = document.querySelector('#redFlower');
+redFlower.addEventListener('dblclick', () => {
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+    redFlower.children[i].classList.value = 'pixel'
+   }
+  pixelBoard.innerHTML = redFlower.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   redFlower.children[i].classList.value = 'pixel-E'
+  }
+})
+
+
 
