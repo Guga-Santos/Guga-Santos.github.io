@@ -27,8 +27,17 @@ h1 {
   width: 30%;
   height: 700px;
   background-color: transparent;
-  /* border: 1px black solid; */
+  border: 1px black solid;
+}
 
+.exemplos {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  float: right;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
 }
 
 #rightSection {

@@ -128,7 +128,7 @@ soundIcon.addEventListener('click', () => {
   soundIcon.classList = 'soundOn'
   document.querySelector('#audio-container').innerHTML = ''
   } else if (soundIcon.classList.value === 'soundOn'){
-    soundIcon.src = './images/mudo.png'
+    soundIcon.src = './images/mudo.png'  
     soundIcon.classList = ''
     document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/SuperMarioBros.mp3"></audio>'
     const audio = document.getElementById("myaudio");
@@ -149,12 +149,11 @@ informacoes.addEventListener('mouseleave', () => {
 })
 //
 
-
-
 //
 
 const bucket = document.querySelector('#bucket');
 bucket.addEventListener('click', () => {
+  brush.classList.remove('uso')
   eraser.classList.remove('uso')
   bucket.classList.add('uso')
 })
@@ -170,6 +169,7 @@ pixelBoard.addEventListener('click', () => {
 const eraser = document.querySelector('#eraser');
 
 eraser.addEventListener('click', () => {
+  brush.classList.remove('uso')
   bucket.classList.remove('uso')
   eraser.classList.add('uso')
 })
@@ -178,6 +178,8 @@ pixelBoard.addEventListener('mousedown', (e) => {
   if(!draw && e.target.id == ''){ 
   if (eraser.classList.contains('uso')) {
     e.target.style.backgroundColor = 'grey'
+  }else if(brush.classList.contains('uso')) {
+    e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor
   }
 }
 })
@@ -185,26 +187,28 @@ pixelBoard.addEventListener('mouseover', (e) => {
   if(draw && e.target.id == '') { 
   if (eraser.classList.contains('uso')) {
     e.target.style.backgroundColor = 'grey'
+  } else if(brush.classList.contains('uso')) {
+    e.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor
   }
 }
 })
-
-
+//
 const brush = document.querySelector('#brush');
-brush.addEventListener('click', () => {
+brush.addEventListener('click', (e) => {
   eraser.classList.remove('uso')
   bucket.classList.remove('uso')
-  bucket.classList.remove('uso')
-  // document.querySelector('#color-palette').firstElementChild.classList.add('selected')
+  brush.classList.add('uso')
 })
 //
-// const miniPixel = document.querySelector('#pixel-board-mini');
-// pixelBoard.addEventListener('mouseover', () => {
-//   miniPixel.innerHTML = ''
-//   miniPixel.innerHTML = pixelBoard.innerHTML
-// })
-
-//
-
+const greenToddy = document.querySelector('#greenToddy');
+greenToddy.addEventListener('dblclick', () => {
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+    greenToddy.children[i].classList.value = 'pixel'
+   }
+  pixelBoard.innerHTML = greenToddy.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   greenToddy.children[i].classList.value = 'pixel-E'
+  }
+})
 //
 
