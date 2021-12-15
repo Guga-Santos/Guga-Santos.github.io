@@ -200,36 +200,60 @@ brush.addEventListener('click', (e) => {
   brush.classList.add('uso')
 })
 //
-const greenToddy = document.querySelector('#greenToddy');
-greenToddy.addEventListener('dblclick', () => {
-  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
-    greenToddy.children[i].classList.value = 'pixel'
-   }
-  pixelBoard.innerHTML = greenToddy.innerHTML
-  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
-   greenToddy.children[i].classList.value = 'pixel-E'
-  }
+const greenToddy = document.querySelector('#greenToddy');    
+    greenToddy.addEventListener('dblclick', () => {
+      for(let i = 0; i < greenToddy.childElementCount; i += 1) {
+        greenToddy.children[i].classList.value = 'pixel'
+      }
+      pixelBoard.innerHTML = greenToddy.innerHTML
+      for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+        greenToddy.children[i].classList.value = 'pixel-E'
+      }
+      pixelBoard.style.gridTemplateColumns= "repeat(16, 1fr)"
+      pixelBoard.style.gridTemplateRows= "repeat(16, 1fr)"
+      document.querySelector('#board-size').value = '16'
 })
 //
 const redToddy = document.querySelector('#redToddy');
 redToddy.addEventListener('dblclick', () => {
-  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+  for(let i = 0; i < redToddy.childElementCount; i += 1) {
     redToddy.children[i].classList.value = 'pixel'
    }
   pixelBoard.innerHTML = redToddy.innerHTML
   for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
    redToddy.children[i].classList.value = 'pixel-E'
   }
+  pixelBoard.style.gridTemplateColumns= "repeat(16, 1fr)"
+  pixelBoard.style.gridTemplateRows= "repeat(16, 1fr)"
+  document.querySelector('#board-size').value = '16'
 })
 //
 const redFlower = document.querySelector('#redFlower');
 redFlower.addEventListener('dblclick', () => {
-  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+  for(let i = 0; i < redFlower.childElementCount; i += 1) {
     redFlower.children[i].classList.value = 'pixel'
    }
   pixelBoard.innerHTML = redFlower.innerHTML
   for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
    redFlower.children[i].classList.value = 'pixel-E'
+  }
+  pixelBoard.style.gridTemplateColumns= "repeat(16, 1fr)"
+  pixelBoard.style.gridTemplateRows= "repeat(16, 1fr)"
+  document.querySelector('#board-size').value = '16'
+})
+//
+const mario = document.querySelector('#mario');
+mario.addEventListener('dblclick', () => {
+  for(let i = 0; i < mario.childElementCount; i += 1) {
+    mario.children[i].classList.value = 'pixel'
+   }
+   pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+   pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+   document.querySelector('#board-size').value = '22'
+
+  pixelBoard.innerHTML = mario.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   mario.children[i].classList.value = 'pixel-E'
   }
 })
 

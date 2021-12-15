@@ -25,20 +25,44 @@ h1 {
 #leftSection {
   display: inline-block;
   width: 30%;
-  height: 700px;
+  height: fit-content;
   background-color: transparent;
-  border: 1px black solid;
+  /* border: 1px black solid; */
+  align-items: center;
 }
 
-.exemplos {
+.mini {
+  display: block;
+  margin-top: 10px;
+}
+
+#container-mini {
+  width: 100px;
+  float: right;
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  background-color: gray;
+  border: 3px dashed black;
+}
+
+.exemplos16 {
   width: 100px;
   height: 100px;
-  border: 1px solid black;
-  float: right;
+  border: 2px dashed black;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
 }
+
+.exemplos22 {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed black;
+  display: grid;
+  grid-template-columns: repeat(22, 1fr);
+  grid-template-rows: repeat(22, 1fr);
+}
+
 
 #rightSection {
   display: inline-block;
@@ -256,12 +280,3 @@ footer {
   border: 2px solid black;
   bottom: 0px;
 }
-
-/* #pixel-board-mini {
-width: 80px;
-height: 80px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(16, 1fr);
-grid-template-rows: repeat(16, 1fr);
-} */
