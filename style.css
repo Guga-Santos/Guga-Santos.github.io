@@ -1,45 +1,64 @@
 body{
-  width: 1380px;
-  height: 720;
   width: 99%;
   background-image: url(./images/marioBG.jpg);
   background-size: cover;
-  padding: 0px;
+  -webkit-box-align: center;
+}
+
+#title  {
+  user-select: none;
+  font-family: 'MinecraftiaRegular';
+  text-align: center;
+  margin-top: 2%;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
 }
 
 #middleSection{
   display: inline-block;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 0px;
   /* border: 1px solid black; */
-  width: 35% ;
-  height: 700px;
+  width: fit-content ;
+  height: fit-content;
+  position: absolute;
 }
 
-h1 {
-  user-select: none;
-}
 
 #leftSection {
   display: inline-block;
-  width: 30%;
+  width: 39%;
   height: fit-content;
   background-color: transparent;
+  margin-right: 10px;
+}
+
+#rightSection {
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  margin-left: 401px;
+  position: absolute;
+  
   /* border: 1px black solid; */
-  align-items: center;
 }
 
 .mini {
   display: block;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 #container-mini {
   width: 100px;
   float: right;
-  margin-bottom: 50px;
+  padding: 5px 10px;
+  background-color: gray;
+  border: 3px dashed black;
+}
+
+#container-mini2 {
+  width: 100px;
+  float: left;
   padding: 5px 10px;
   background-color: gray;
   border: 3px dashed black;
@@ -64,25 +83,7 @@ h1 {
 }
 
 
-#rightSection {
-  display: inline-block;
-  width: 30%;
-  height: 700px;
-  background-color: transparent;
-  margin-right: 0px;
-  /* border: 1px black solid; */
-}
 
-#title  {
-  font-family: 'MinecraftiaRegular';
-  text-align: center;
-  margin-top: 0px;
-  font-size: 60px;
-  font-weight: bold;
-  font-style: normal;
-  color: white;
-  margin-bottom: 5px;
-}
 
 #informacoes {
   width: 80px;
@@ -106,21 +107,18 @@ h1 {
 }
 
 #color-palette {
+  width: 100%;
+  padding-left: 10px;
   margin: auto;
 }
 
 #inputColor {
   display: inline-block;
-  padding: 0px;
-  margin: 0px;
   outline-style: groove;
   outline-width: 1px;
   height: 27px;
   width: 134px;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  bottom: 4px;
+  bottom: 5px;
   left: 1px;
   position: relative;
 
@@ -189,6 +187,10 @@ h1 {
   margin: auto;
 }
 
+#clear-board {
+  font-size: 15px;
+}
+
 .button:hover {
   cursor: pointer;
   height: 45px;
@@ -215,7 +217,6 @@ h1 {
   color: rgb(26, 2, 2);
   padding: 5px 5px 5px 5px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   cursor: pointer;
   box-shadow: black 2px 2px 2px;
@@ -270,13 +271,4 @@ h1 {
   background-color: rgb(172, 172, 172);
   width: 6%;
   height: 35px;
-}
-
-footer {
-  display: flex;
-  width: 100%;
-  height: 100px;
-  background-color: transparent;
-  border: 2px solid black;
-  bottom: 0px;
 }
