@@ -175,14 +175,14 @@ eraser.addEventListener('click', () => {
 })
 
 pixelBoard.addEventListener('mousedown', (e) => {
-  if(!draw){ 
+  if(!draw && e.target.id == ''){ 
   if (eraser.classList.contains('uso')) {
     e.target.style.backgroundColor = 'grey'
   }
 }
 })
 pixelBoard.addEventListener('mouseover', (e) => {
-  if(draw) { 
+  if(draw && e.target.id == '') { 
   if (eraser.classList.contains('uso')) {
     e.target.style.backgroundColor = 'grey'
   }
