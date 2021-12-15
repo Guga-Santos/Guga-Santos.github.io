@@ -137,3 +137,14 @@ informacoes.addEventListener('mouseleave', () => {
   informacoes.innerHTML = ''
 })
 //
+
+
+
+//
+const eraser = document.querySelector('#eraser');
+eraser.addEventListener('click', () => {
+  const eraserGamb = document.getElementById('eraserGamb');
+  const selected = document.getElementsByClassName('selected')[0];
+  selected.classList.remove('selected');
+  eraserGamb.classList.add('selected')
+})
