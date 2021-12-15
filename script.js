@@ -124,11 +124,11 @@ const soundIcon = document.querySelector('#soundIcon');
 
 soundIcon.addEventListener('click', () => {
   if(soundIcon.classList.value === '') {
-  soundIcon.src = './images/SoundOn.png'
+  soundIcon.src = './images/som-ligado.png'
   soundIcon.classList = 'soundOn'
   document.querySelector('#audio-container').innerHTML = ''
   } else if (soundIcon.classList.value === 'soundOn'){
-    soundIcon.src = './images/SoundOff.png'
+    soundIcon.src = './images/mudo.png'
     soundIcon.classList = ''
     document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/SuperMarioBros.mp3"></audio>'
     const audio = document.getElementById("myaudio");
