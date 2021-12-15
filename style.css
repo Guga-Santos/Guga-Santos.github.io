@@ -95,6 +95,12 @@ body{
   box-shadow: black 1px 1px 1px;
 }
 
+.color:active {
+  width: 26px;
+  height: 23px;
+  box-shadow: white 2px 3px 1px ;
+}
+
 #pixel-board {
   width: 340px;
   height: 340px;
@@ -145,6 +151,9 @@ body{
   font-size: 105%;
   box-shadow: black 0px 0px 0px;
 }
+.button:active {
+  background-color: grey;
+}
 
 #board-size {
   display: inline-block;
@@ -166,10 +175,6 @@ body{
   cursor: pointer;
   box-shadow: black 2px 2px 2px;
   font-family: 'MinecraftiaRegular' ;
-}
-
-#generate-board:hover {
-  box-shadow: black 0px 0px 0px;
 }
 
 #sound {
@@ -211,6 +216,12 @@ body{
   cursor: pointer;
   box-shadow: black 2px 2px 2px;
   padding: 4px 16px 4px 16px;
+}
+
+.tools:active {
+  background-color: rgb(172, 172, 172);
+  width: 6%;
+  height: 35px;
 }
 
 footer {
