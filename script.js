@@ -141,10 +141,50 @@ informacoes.addEventListener('mouseleave', () => {
 
 
 //
+
+const bucket = document.querySelector('#bucket');
+bucket.addEventListener('click', () => {
+  bucket.classList.add('uso')
+})
+pixelBoard.addEventListener('click', () => {
+  if(bucket.classList.contains('uso')){
+    const pixel = document.querySelectorAll('.pixel');
+    for (let i = 0; i < pixel.length; i += 1) {
+      pixel[i].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+    }
+  }
+})
+
 const eraser = document.querySelector('#eraser');
 eraser.addEventListener('click', () => {
+  bucket.classList.remove('uso')
   const eraserGamb = document.getElementById('eraserGamb');
   const selected = document.getElementsByClassName('selected')[0];
   selected.classList.remove('selected');
   eraserGamb.classList.add('selected')
 })
+
+const brush = document.querySelector('#brush');
+brush.addEventListener('click', () => {
+  bucket.classList.remove('uso')
+})
+
+function guardarConteudo() {
+  const htmlContent = pixelBoard.innerHTML;
+  localStorage.setItem('conteudo', htmlContent);
+}
+const saveButton = document.querySelector('#save');
+
+saveButton.addEventListener('click', guardarConteudo);
+
+const addButton = document.querySelector('#add');
+
+const saved = localStorage.getItem('conteudo');
+function pegarConteudo() {
+if (saved) {
+  const htmlContent1 = pixelBoard;
+  htmlContent1.innerHTML = saved;
+}
+}
+
+addButton.addEventListener('dblclick', pegarConteudo)

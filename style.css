@@ -16,12 +16,13 @@ body{
   flex-direction: column;
   /* border: 1px solid black; */
   width: 35% ;
+  height: 700px;
 }
 
 #leftSection {
   display: inline-block;
   width: 30%;
-  height: 550px;
+  height: 700px;
   background-color: transparent;
   /* border: 1px black solid; */
 
@@ -30,7 +31,7 @@ body{
 #rightSection {
   display: inline-block;
   width: 30%;
-  height: 550px;
+  height: 700px;
   background-color: transparent;
   margin-right: 0px;
   /* border: 1px black solid; */
@@ -199,7 +200,7 @@ body{
 }
 
 .tools {
-  width: 10%;
+  width: 8%;
   height: 35px;
   padding: 3px 15px 3px 15px;
   margin-top: 3px;
@@ -214,5 +215,16 @@ body{
   padding: 4px 16px 4px 16px;
 }
 
+footer {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+  border: 2px solid black;
+  bottom: 0px;
+}
 
-
+#pixel-board-mini {
+width: 80px;
+height: 80px;
+}
