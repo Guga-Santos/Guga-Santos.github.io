@@ -12,6 +12,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 0px;
   /* border: 1px solid black; */
   width: 35% ;
   height: 700px;
@@ -107,6 +108,8 @@ body{
   display: grid;
   border: 4px dashed black;
   margin: 0 auto;
+  background-color: rgb(97, 97, 97);
+  gap: 1px;
 }
 
 #pixel-board:hover {
@@ -123,7 +126,7 @@ body{
 
 .pixel {
   background-color: grey;
-  border: 1px black solid;
+  /* border: 1px black solid; */
 }
 
 .buttonDiv {
@@ -195,11 +198,12 @@ body{
 #ferramentas {
   margin: auto;
   margin-top: 5px;
-  width: 52%;
+  width: fit-content;
   height: fit-content;
   background-color: white;
   box-shadow: black 2px 2px 2px;
   border: 3px solid black;
+  padding-left: 20px;
 }
 
 .tools {
