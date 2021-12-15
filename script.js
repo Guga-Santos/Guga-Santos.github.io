@@ -1,12 +1,23 @@
-// //
-// function openWin() {
-//   myWindow = window.open("", "", "width=100, height=100");
-//  }
- 
-//  function resizeWin() {
-//     myWindow.resizeTo(250, 250);                            
-//      myWindow.focus();                                     
-//  }
+// function guardarConteudo() {
+//   const htmlContent = document.querySelector('#middleSection').innerHTML;
+//   localStorage.setItem('conteudo', htmlContent);
+// }
+// const saveButton = document.querySelector('#save');
+
+// saveButton.addEventListener('click', guardarConteudo);
+
+// const addButton = document.querySelector('#add');
+
+// const saved = localStorage.getItem('conteudo');
+
+// function pegarConteudo() {
+// if (saved) {
+//   const htmlContent1 = document.querySelector('#middleSection');
+//   htmlContent1.innerHTML = saved;
+// }
+// }
+// addButton.addEventListener('click', pegarConteudo)
+
  //
 const pixelBoard = document.querySelector('#pixel-board');
 //
@@ -144,6 +155,7 @@ informacoes.addEventListener('mouseleave', () => {
 
 const bucket = document.querySelector('#bucket');
 bucket.addEventListener('click', () => {
+  eraser.classList.remove('uso')
   bucket.classList.add('uso')
 })
 pixelBoard.addEventListener('click', () => {
@@ -156,35 +168,43 @@ pixelBoard.addEventListener('click', () => {
 })
 
 const eraser = document.querySelector('#eraser');
+
 eraser.addEventListener('click', () => {
   bucket.classList.remove('uso')
-  const eraserGamb = document.getElementById('eraserGamb');
-  const selected = document.getElementsByClassName('selected')[0];
-  selected.classList.remove('selected');
-  eraserGamb.classList.add('selected')
+  eraser.classList.add('uso')
 })
+
+pixelBoard.addEventListener('mousedown', (e) => {
+  if(!draw){ 
+  if (eraser.classList.contains('uso')) {
+    e.target.style.backgroundColor = 'grey'
+  }
+}
+})
+pixelBoard.addEventListener('mouseover', (e) => {
+  if(draw) { 
+  if (eraser.classList.contains('uso')) {
+    e.target.style.backgroundColor = 'grey'
+  }
+}
+})
+
 
 const brush = document.querySelector('#brush');
 brush.addEventListener('click', () => {
+  eraser.classList.remove('uso')
   bucket.classList.remove('uso')
+  bucket.classList.remove('uso')
+  // document.querySelector('#color-palette').firstElementChild.classList.add('selected')
 })
+//
+// const miniPixel = document.querySelector('#pixel-board-mini');
+// pixelBoard.addEventListener('mouseover', () => {
+//   miniPixel.innerHTML = ''
+//   miniPixel.innerHTML = pixelBoard.innerHTML
+// })
 
-function guardarConteudo() {
-  const htmlContent = pixelBoard.innerHTML;
-  localStorage.setItem('conteudo', htmlContent);
-}
-const saveButton = document.querySelector('#save');
+//
 
-saveButton.addEventListener('click', guardarConteudo);
+//
 
-const addButton = document.querySelector('#add');
-
-const saved = localStorage.getItem('conteudo');
-function pegarConteudo() {
-if (saved) {
-  const htmlContent1 = pixelBoard;
-  htmlContent1.innerHTML = saved;
-}
-}
-
-addButton.addEventListener('dblclick', pegarConteudo)
