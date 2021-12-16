@@ -52,7 +52,7 @@ window.addEventListener('mouseup', function(){
   draw = false
 })
 //
-/* ^^^^^ A função cria um grid de pixels com x e y igual a n, dá uma classe 'pixel' para casa div criada e adiciona um evento que, caso o mouse passe por cima de com o botão clicado, 
+/* ^^^^^ A função cria um grid de pixels com x e y igual a n, dá uma classe 'pixel' para casa div criada e adiciona um evento que, caso o mouse passe por cima de com o botão clicado, a cor do background da div se torne a cor de quem está com a classe selected. 
 */
 function changeValue() {
   const inputV = document.querySelector('#board-size');
@@ -66,10 +66,6 @@ function changeValue() {
     pixelBoard.innerHTML = '';
     numeroGrid(inputV.value);
 
-    if (inputV.value == (quadrados / inputV.value)) {
-      alert('Board inválido!');
-    }
-
     document.querySelector('#pixel-board').style.gridTemplateColumns = `repeat(${inputV.value}, 1fr)`;
     document.querySelector('#pixel-board').style.gridTemplateRows = `repeat(${inputV.value}, 1fr)`;
   }
@@ -77,7 +73,7 @@ function changeValue() {
 //
 window.onload = changeValue;
 //
-
+/* ^^^^^ Altera a quantida de divs no pixelBoard. Se o valor testado for menor que 1 ou maior que 50, um alerta é gerado. */
 //
 const classTarget = document.querySelector('#color-palette');
 
@@ -87,7 +83,7 @@ classTarget.addEventListener('click', (event) => {
   event.target.classList.add('selected');
 })
 //
-
+/* ^^^^^ Caso ocorra algum click dentro da color-palete, a classe selected será adicionada ao elemento clicado, e a apenas ele.*/
 //
 const colorPicker = document.querySelector('#inputColor');
 
@@ -99,7 +95,7 @@ colorPicker.addEventListener('change', () => {
   variavel.style.backgroundColor = colorPicker.value
 })
 //
-
+/* ^^^^^ Caso seja modificado o valor do input Color Picker, uma div 'variável' receberá esse valor e será adicionado à essa div a classe selected. */
 //
 const button = document.querySelector('.button');
 
@@ -111,7 +107,7 @@ function clearBoard() {
 }
 button.addEventListener('click', clearBoard);
 //
-
+/* ^^^^^ Caso o elemento com a classe 'button' sejá clicado, todos os pixel receberão o backgroundColor 'grey' */
 //
 const boardSizeX = document.querySelector('#board-size');
 
@@ -119,7 +115,7 @@ boardSizeX.addEventListener('click', () => {
   changeValue()
 })
 //
-
+/* ^^^^^ Quando o input com a classe 'board-size' for clicado, ele chama a função de criar o quadro de pixel que já tem como alvo de valor o próprio value deste input.*/
 //
 const soundIcon = document.querySelector('#soundIcon');
 
@@ -137,7 +133,7 @@ soundIcon.addEventListener('click', () => {
   }
 })
 //
-
+/* ^^^^^ Liga e desliga o som, sem muita complicação. */
 //
 const informacoes = document.querySelector('#informacoes');
 
@@ -149,7 +145,7 @@ informacoes.addEventListener('mouseleave', () => {
   informacoes.innerHTML = ''
 })
 //
-
+/* ^^^^Quando houver o clique na div oculta, ela mostra a mensagem. Quando o mouse sair de cima da div, a mensagem some. */
 //
 
 const bucket = document.querySelector('#bucket');
@@ -167,16 +163,26 @@ pixelBoard.addEventListener('click', () => {
   }
 })
 
-const eraser = document.querySelector('#eraser');
+/* Quando a lata de tinta é selecionada, ela recebe a classe 'uso' e as outras ferramentas são excluidas da classe. Então, com essa contendo essa classe, caso clique dentro do pixel board, todas as divs serão preenchidas com a cor de background do elemento da classe selected. */
 
+const eraser = document.querySelector('#eraser');
 eraser.addEventListener('click', () => {
   brush.classList.remove('uso')
   bucket.classList.remove('uso')
   eraser.classList.add('uso')
 })
+/* Quando clicado na borracha, ela ganha a classe 'uso' */
+const brush = document.querySelector('#brush');
+brush.addEventListener('click', (e) => {
+  eraser.classList.remove('uso')
+  bucket.classList.remove('uso')
+  brush.classList.add('uso')
+})
+//
+/* Quando clicado no pincel, ele ganha a classe 'uso'*/
 
 pixelBoard.addEventListener('mousedown', (e) => {
-  if(!draw && e.target.id == ''){ 
+  if(draw && e.target.id == ''){ 
   if (eraser.classList.contains('uso')) {
     e.target.style.backgroundColor = 'grey'
   }else if(brush.classList.contains('uso')) {
@@ -184,6 +190,8 @@ pixelBoard.addEventListener('mousedown', (e) => {
   }
 }
 })
+/* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso', onde o mouse clicar será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse clicar seá acrescido do background de quem tiver a classe 'selected'. */
+
 pixelBoard.addEventListener('mouseover', (e) => {
   if(draw && e.target.id == '') { 
   if (eraser.classList.contains('uso')) {
@@ -193,13 +201,7 @@ pixelBoard.addEventListener('mouseover', (e) => {
   }
 }
 })
-//
-const brush = document.querySelector('#brush');
-brush.addEventListener('click', (e) => {
-  eraser.classList.remove('uso')
-  bucket.classList.remove('uso')
-  brush.classList.add('uso')
-})
+/* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso', onde o mouse passar por cima será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse passar por cima será acrescido do background de quem tiver a classe 'selected'. */
 //
 const greenToddy = document.querySelector('#greenToddy');    
     greenToddy.addEventListener('dblclick', () => {
@@ -319,6 +321,10 @@ feather.addEventListener('dblclick', () => {
   }
 })
 
+/* ^^^ Quando houver um clique duplo no elemento de id 'feather', a classe de todos os filhos de feather será 'pixel', o pixel board receberá 22 numero de colunas e 22 numeros de linhas e o valor do board-size também será 22. O conteúdo do pixel boarde será definido como o do feather e a classe de todos os filhos de feather será 'pixel-E'. Recebem a classe 'pixel' para que sejam alteraveis dentro do quadro pixelboard e recebem a classe 'pixel-e' para que não sejam alterados dentro do quadro 'feather'.
+
+Isso serve para todos os outros id's acima.*/
+
 pixelBoard.addEventListener('contextmenu', (e) => {
   e.preventDefault()
   if(!eraser.classList.contains('uso')) {
@@ -331,5 +337,7 @@ pixelBoard.addEventListener('contextmenu', (e) => {
     brush.classList.add('uso')
   }
 })
+
+/* Quando clicar com o botão direito, ele irá alterar entre pincel e borracha. */
 
 
