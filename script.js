@@ -181,7 +181,7 @@ brush.addEventListener('click', (e) => {
 //
 /* Quando clicado no pincel, ele ganha a classe 'uso'*/
 
-pixelBoard.addEventListener('mousedown', (e) => {
+pixelBoard.addEventListener('mouseover', (e) => {
   if(draw && e.target.id == ''){ 
   if (eraser.classList.contains('uso')) {
     e.target.style.backgroundColor = 'grey'
@@ -192,8 +192,8 @@ pixelBoard.addEventListener('mousedown', (e) => {
 })
 /* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso', onde o mouse clicar será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse clicar seá acrescido do background de quem tiver a classe 'selected'. */
 
-pixelBoard.addEventListener('mouseover', (e) => {
-  if(draw && e.target.id == '') { 
+pixelBoard.addEventListener('mousedown', (e) => {
+  if(!draw && e.target.id == '') { 
   if (eraser.classList.contains('uso')) {
     e.target.style.backgroundColor = 'grey'
   } else if(brush.classList.contains('uso')) {
@@ -339,5 +339,3 @@ pixelBoard.addEventListener('contextmenu', (e) => {
 })
 
 /* Quando clicar com o botão direito, ele irá alterar entre pincel e borracha. */
-
-
