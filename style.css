@@ -179,6 +179,7 @@ body{
   margin: 0 auto;
   background-color: rgb(97, 97, 97);
   gap: 1px;
+  user-select: none;
 }
 
 #pixel-board:hover {

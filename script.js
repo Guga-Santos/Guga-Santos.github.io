@@ -22,6 +22,7 @@
 const pixelBoard = document.querySelector('#pixel-board');
 //
 let draw = false
+
 function numeroGrid(n) {
   for (let i = 1; i <= n * n; i += 1) {
     const div = document.createElement('div');
@@ -33,7 +34,7 @@ function numeroGrid(n) {
       div.style.backgroundColor = select;
     }
     });
-    div.addEventListener('mousedown', () => {
+    div.addEventListener('click', () => {
       const select = document.querySelector('.selected').style.backgroundColor;
       if(!draw) { 
       div.style.backgroundColor = select;
@@ -51,8 +52,8 @@ window.addEventListener('mouseup', function(){
   draw = false
 })
 //
-
-//
+/* ^^^^^ A função cria um grid de pixels com x e y igual a n, dá uma classe 'pixel' para casa div criada e adiciona um evento que, caso o mouse passe por cima de com o botão clicado, 
+*/
 function changeValue() {
   const inputV = document.querySelector('#board-size');
   const currentVal = inputV.value;
