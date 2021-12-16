@@ -1,11 +1,13 @@
 @font-face {
   font-family: 'minecraftiaRegular';
   src: url(./Font/MinecraftiaRegular.ttf);
+  font-display: swap;
 }
+/* Sugerido, pelo google stats, que a fonte esteja dentro do diretório e que seu carregamento seja feito após a aparição do texto com letras normais */
 
 body{
   width: 99%;
-  background-image: url(./images/marioBG.jpg);
+  background-image: url(./images/marioBG2.jpg);
   background-size: cover;
 }
 
