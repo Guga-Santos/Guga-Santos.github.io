@@ -318,4 +318,17 @@ feather.addEventListener('dblclick', () => {
   }
 })
 
+pixelBoard.addEventListener('contextmenu', (e) => {
+  e.preventDefault()
+  if(!eraser.classList.contains('uso')) {
+    brush.classList.remove('uso')
+    bucket.classList.remove('uso')
+    eraser.classList.add('uso')
+  } else if (eraser.classList.contains('uso')) {
+    eraser.classList.remove('uso')
+    bucket.classList.remove('uso')
+    brush.classList.add('uso')
+  }
+})
+
 
