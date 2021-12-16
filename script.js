@@ -348,9 +348,17 @@ pixelBoard.addEventListener('contextmenu', (e) => {
 })
 /* Quando clicar com o botão direito, ele irá alterar entre pincel e borracha. */
 
-const miniContainer = document.querySelector('.mini-cont');
+const miniContainer = document.querySelector('#container-mini');
 miniContainer.addEventListener('click', () => {
   eraser.classList.remove('uso')
   bucket.classList.remove('uso')
   brush.classList.add('uso')
 })
+
+const miniContainer2 = document.querySelector('#container-mini2');
+miniContainer2.addEventListener('click', () => {
+  eraser.classList.remove('uso')
+  bucket.classList.remove('uso')
+  brush.classList.add('uso')
+})
+/* Quando clicado dentro do container que contem as miniaturas, o picel é selecionado. */
