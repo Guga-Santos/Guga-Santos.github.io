@@ -2,7 +2,6 @@ body{
   width: 99%;
   background-image: url(./images/marioBG.jpg);
   background-size: cover;
-  -webkit-box-align: center;
 }
 
 #title  {
@@ -26,10 +25,16 @@ body{
 
 #leftSection {
   display: inline-block;
-  width: 39%;
+  width: 38.5%;
   height: fit-content;
   background-color: transparent;
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 1440px) {
+  #leftSection {
+    width: 33%;
+  }
 }
 
 #rightSection {
@@ -82,7 +87,23 @@ body{
   grid-template-rows: repeat(22, 1fr);
 }
 
+.exemplos28 {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed black;
+  display: grid;
+  grid-template-columns: repeat(28, 1fr);
+  grid-template-rows: repeat(28,1fr);
+}
 
+.exemplos34 {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed black;
+  display: grid;
+  grid-template-columns: repeat(34, 1fr);
+  grid-template-rows: repeat(34,1fr);
+}
 
 
 #informacoes {
@@ -254,10 +275,10 @@ body{
 .tools {
   width: 8%;
   height: 35px;
-  padding: 3px 15px 3px 15px;
+  padding: 3px 11px 3px 15px;
   margin-top: 3px;
   margin-left: 3px;
-  border: 1px solid black;
+  border: 3px solid black;
   box-shadow: black 1px 1px 1px;
 }
 

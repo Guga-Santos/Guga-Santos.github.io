@@ -209,23 +209,9 @@ const greenToddy = document.querySelector('#greenToddy');
       for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
         greenToddy.children[i].classList.value = 'pixel-E'
       }
-      pixelBoard.style.gridTemplateColumns= "repeat(16, 1fr)"
-      pixelBoard.style.gridTemplateRows= "repeat(16, 1fr)"
-      document.querySelector('#board-size').value = '16'
-})
-//
-const redToddy = document.querySelector('#redToddy');
-redToddy.addEventListener('dblclick', () => {
-  for(let i = 0; i < redToddy.childElementCount; i += 1) {
-    redToddy.children[i].classList.value = 'pixel'
-   }
-  pixelBoard.innerHTML = redToddy.innerHTML
-  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
-   redToddy.children[i].classList.value = 'pixel-E'
-  }
-  pixelBoard.style.gridTemplateColumns= "repeat(16, 1fr)"
-  pixelBoard.style.gridTemplateRows= "repeat(16, 1fr)"
-  document.querySelector('#board-size').value = '16'
+      pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+      pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+      document.querySelector('#board-size').value = '22'
 })
 //
 const redFlower = document.querySelector('#redFlower');
@@ -237,9 +223,9 @@ redFlower.addEventListener('dblclick', () => {
   for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
    redFlower.children[i].classList.value = 'pixel-E'
   }
-  pixelBoard.style.gridTemplateColumns= "repeat(16, 1fr)"
-  pixelBoard.style.gridTemplateRows= "repeat(16, 1fr)"
-  document.querySelector('#board-size').value = '16'
+  pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+  pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+  document.querySelector('#board-size').value = '22'
 })
 //
 const mario = document.querySelector('#mario');
@@ -256,6 +242,80 @@ mario.addEventListener('dblclick', () => {
    mario.children[i].classList.value = 'pixel-E'
   }
 })
+//
+const yoshi = document.querySelector('#yoshi');
+yoshi.addEventListener('dblclick', () => {
+  for(let i = 0; i < yoshi.childElementCount; i += 1) {
+    yoshi.children[i].classList.value = 'pixel'
+   }
+   pixelBoard.style.gridTemplateColumns= "repeat(28, 1fr)"
+   pixelBoard.style.gridTemplateRows= "repeat(28, 1fr)"
+   document.querySelector('#board-size').value = '28'
 
+  pixelBoard.innerHTML = yoshi.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   yoshi.children[i].classList.value = 'pixel-E'
+  }
+})
+//
+const princess = document.querySelector('#princess');
+princess.addEventListener('dblclick', () => {
+  for(let i = 0; i < princess.childElementCount; i += 1) {
+    princess.children[i].classList.value = 'pixel'
+   }
+   pixelBoard.style.gridTemplateColumns= "repeat(34, 1fr)"
+   pixelBoard.style.gridTemplateRows= "repeat(34, 1fr)"
+   document.querySelector('#board-size').value = '34'
+
+  pixelBoard.innerHTML = princess.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   princess.children[i].classList.value = 'pixel-E'
+  }
+})
+//
+const star = document.querySelector('#star');
+star.addEventListener('dblclick', () => {
+  for(let i = 0; i < star.childElementCount; i += 1) {
+    star.children[i].classList.value = 'pixel'
+   }
+   pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+   pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+   document.querySelector('#board-size').value = '22'
+
+  pixelBoard.innerHTML = star.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   star.children[i].classList.value = 'pixel-E'
+  }
+})
+//
+const ghost = document.querySelector('#ghost');
+ghost.addEventListener('dblclick', () => {
+  for(let i = 0; i < ghost.childElementCount; i += 1) {
+    ghost.children[i].classList.value = 'pixel'
+   }
+   pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+   pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+   document.querySelector('#board-size').value = '22'
+
+  pixelBoard.innerHTML = ghost.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   ghost.children[i].classList.value = 'pixel-E'
+  }
+})
+//
+const feather = document.querySelector('#feather');
+feather.addEventListener('dblclick', () => {
+  for(let i = 0; i < feather.childElementCount; i += 1) {
+    feather.children[i].classList.value = 'pixel'
+   }
+   pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+   pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+   document.querySelector('#board-size').value = '22'
+
+  pixelBoard.innerHTML = feather.innerHTML
+  for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   feather.children[i].classList.value = 'pixel-E'
+  }
+})
 
 
