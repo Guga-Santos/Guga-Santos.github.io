@@ -346,5 +346,11 @@ pixelBoard.addEventListener('contextmenu', (e) => {
     brush.classList.add('uso')
   }
 })
-
 /* Quando clicar com o botão direito, ele irá alterar entre pincel e borracha. */
+
+const miniContainer = document.querySelector('.mini-cont');
+miniContainer.addEventListener('click', () => {
+  eraser.classList.remove('uso')
+  bucket.classList.remove('uso')
+  brush.classList.add('uso')
+})
