@@ -138,6 +138,7 @@ soundIcon.addEventListener('click', () => {
 const informacoes = document.querySelector('#informacoes');
 
 informacoes.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/Menu.wav"></audio>'
   informacoes.innerHTML = '<p id="paragrafo">Este site foi feito por <a href="https://github.com/Guga-Santos" target="_blank">Guga Santos</a> como parte da conclusão do bloco 5 do curso de desenvolvimento web da <a href="http://www.betrybe.com" target="_blank">@Trybe</a>. </p>'
 })
 
@@ -205,6 +206,7 @@ pixelBoard.addEventListener('mousedown', (e) => {
 //
 const greenToddy = document.querySelector('#greenToddy');    
     greenToddy.addEventListener('click', () => {
+      document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/Toddy.wav"></audio>'
       for(let i = 0; i < greenToddy.childElementCount; i += 1) {
         greenToddy.children[i].classList.value = 'pixel'
       }
@@ -219,6 +221,7 @@ const greenToddy = document.querySelector('#greenToddy');
 //
 const redFlower = document.querySelector('#redFlower');
 redFlower.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/flower.wav"></audio>'
   for(let i = 0; i < redFlower.childElementCount; i += 1) {
     redFlower.children[i].classList.value = 'pixel'
    }
@@ -233,6 +236,7 @@ redFlower.addEventListener('click', () => {
 //
 const mario = document.querySelector('#mario');
 mario.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/mario.wav"></audio>'
   for(let i = 0; i < mario.childElementCount; i += 1) {
     mario.children[i].classList.value = 'pixel'
    }
@@ -248,6 +252,7 @@ mario.addEventListener('click', () => {
 //
 const yoshi = document.querySelector('#yoshi');
 yoshi.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/yoshi.wav"></audio>'
   for(let i = 0; i < yoshi.childElementCount; i += 1) {
     yoshi.children[i].classList.value = 'pixel'
    }
@@ -263,6 +268,7 @@ yoshi.addEventListener('click', () => {
 //
 const princess = document.querySelector('#princess');
 princess.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/princess.wav"></audio>'
   for(let i = 0; i < princess.childElementCount; i += 1) {
     princess.children[i].classList.value = 'pixel'
    }
@@ -278,6 +284,7 @@ princess.addEventListener('click', () => {
 //
 const star = document.querySelector('#star');
 star.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/star.wav"></audio>'
   for(let i = 0; i < star.childElementCount; i += 1) {
     star.children[i].classList.value = 'pixel'
    }
@@ -293,6 +300,7 @@ star.addEventListener('click', () => {
 //
 const ghost = document.querySelector('#ghost');
 ghost.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/ghost.wav"></audio>'
   for(let i = 0; i < ghost.childElementCount; i += 1) {
     ghost.children[i].classList.value = 'pixel'
    }
@@ -308,6 +316,7 @@ ghost.addEventListener('click', () => {
 //
 const feather = document.querySelector('#feather');
 feather.addEventListener('click', () => {
+  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/feather.wav"></audio>'
   for(let i = 0; i < feather.childElementCount; i += 1) {
     feather.children[i].classList.value = 'pixel'
    }
