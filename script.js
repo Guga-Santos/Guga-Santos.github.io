@@ -204,7 +204,7 @@ pixelBoard.addEventListener('mousedown', (e) => {
 /* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso', onde o mouse passar por cima será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse passar por cima será acrescido do background de quem tiver a classe 'selected'. */
 //
 const greenToddy = document.querySelector('#greenToddy');    
-    greenToddy.addEventListener('dblclick', () => {
+    greenToddy.addEventListener('click', () => {
       for(let i = 0; i < greenToddy.childElementCount; i += 1) {
         greenToddy.children[i].classList.value = 'pixel'
       }
@@ -218,7 +218,7 @@ const greenToddy = document.querySelector('#greenToddy');
 })
 //
 const redFlower = document.querySelector('#redFlower');
-redFlower.addEventListener('dblclick', () => {
+redFlower.addEventListener('click', () => {
   for(let i = 0; i < redFlower.childElementCount; i += 1) {
     redFlower.children[i].classList.value = 'pixel'
    }
@@ -232,7 +232,7 @@ redFlower.addEventListener('dblclick', () => {
 })
 //
 const mario = document.querySelector('#mario');
-mario.addEventListener('dblclick', () => {
+mario.addEventListener('click', () => {
   for(let i = 0; i < mario.childElementCount; i += 1) {
     mario.children[i].classList.value = 'pixel'
    }
@@ -247,7 +247,7 @@ mario.addEventListener('dblclick', () => {
 })
 //
 const yoshi = document.querySelector('#yoshi');
-yoshi.addEventListener('dblclick', () => {
+yoshi.addEventListener('click', () => {
   for(let i = 0; i < yoshi.childElementCount; i += 1) {
     yoshi.children[i].classList.value = 'pixel'
    }
@@ -262,7 +262,7 @@ yoshi.addEventListener('dblclick', () => {
 })
 //
 const princess = document.querySelector('#princess');
-princess.addEventListener('dblclick', () => {
+princess.addEventListener('click', () => {
   for(let i = 0; i < princess.childElementCount; i += 1) {
     princess.children[i].classList.value = 'pixel'
    }
@@ -277,7 +277,7 @@ princess.addEventListener('dblclick', () => {
 })
 //
 const star = document.querySelector('#star');
-star.addEventListener('dblclick', () => {
+star.addEventListener('click', () => {
   for(let i = 0; i < star.childElementCount; i += 1) {
     star.children[i].classList.value = 'pixel'
    }
@@ -292,7 +292,7 @@ star.addEventListener('dblclick', () => {
 })
 //
 const ghost = document.querySelector('#ghost');
-ghost.addEventListener('dblclick', () => {
+ghost.addEventListener('click', () => {
   for(let i = 0; i < ghost.childElementCount; i += 1) {
     ghost.children[i].classList.value = 'pixel'
    }
@@ -307,7 +307,7 @@ ghost.addEventListener('dblclick', () => {
 })
 //
 const feather = document.querySelector('#feather');
-feather.addEventListener('dblclick', () => {
+feather.addEventListener('click', () => {
   for(let i = 0; i < feather.childElementCount; i += 1) {
     feather.children[i].classList.value = 'pixel'
    }
