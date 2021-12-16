@@ -1,24 +1,3 @@
-// function guardarConteudo() {
-//   const htmlContent = document.querySelector('#middleSection').innerHTML;
-//   localStorage.setItem('conteudo', htmlContent);
-// }
-// const saveButton = document.querySelector('#save');
-
-// saveButton.addEventListener('click', guardarConteudo);
-
-// const addButton = document.querySelector('#add');
-
-// const saved = localStorage.getItem('conteudo');
-
-// function pegarConteudo() {
-// if (saved) {
-//   const htmlContent1 = document.querySelector('#middleSection');
-//   htmlContent1.innerHTML = saved;
-// }
-// }
-// addButton.addEventListener('click', pegarConteudo)
-
- //
 const pixelBoard = document.querySelector('#pixel-board');
 //
 let draw = false
@@ -205,18 +184,18 @@ pixelBoard.addEventListener('mousedown', (e) => {
 /* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso', onde o mouse passar por cima será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse passar por cima será acrescido do background de quem tiver a classe 'selected'. */
 //
 const greenToddy = document.querySelector('#greenToddy');    
-    greenToddy.addEventListener('click', () => {
-      document.querySelector('#audio-container2').innerHTML = '<audio id="myaudio" autoplay src="./midia/Toddy.wav"></audio>'
-      for(let i = 0; i < greenToddy.childElementCount; i += 1) {
-        greenToddy.children[i].classList.value = 'pixel'
-      }
-      pixelBoard.innerHTML = greenToddy.innerHTML
-      for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
-        greenToddy.children[i].classList.value = 'pixel-E'
-      }
-      pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
-      pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
-      document.querySelector('#board-size').value = '22'
+greenToddy.addEventListener('click', () => {
+  document.querySelector('#audio-container2').innerHTML = '<audio id="myaudio" autoplay src="./midia/Toddy.wav"></audio>'
+  for(let i = 0; i < greenToddy.childElementCount; i += 1) {
+    greenToddy.children[i].classList.value = 'pixel'
+   }
+ pixelBoard.innerHTML = greenToddy.innerHTML
+ for(let i = 0; i < pixelBoard.childElementCount; i += 1) {
+   greenToddy.children[i].classList.value = 'pixel-E'
+  }
+  pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+  pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+  document.querySelector('#board-size').value = '22'
 })
 //
 const redFlower = document.querySelector('#redFlower');
@@ -362,3 +341,43 @@ miniContainer2.addEventListener('click', () => {
   brush.classList.add('uso')
 })
 /* Quando clicado dentro do container que contem as miniaturas, o picel é selecionado. */
+
+// Tentando o undo:
+// function guardarConteudo() {
+//   const htmlContent = document.querySelector('#middleSection').innerHTML;
+//   localStorage.setItem('conteudo', htmlContent);
+// }
+// const saveButton = document.querySelector('#save');
+// saveButton.addEventListener('click', guardarConteudo);
+// const addButton = document.querySelector('#add');
+// const saved = localStorage.getItem('conteudo');
+// function pegarConteudo() {
+// if (saved) {
+//   const htmlContent1 = document.querySelector('#middleSection');
+//   htmlContent1.innerHTML = saved;
+// }
+// }
+// addButton.addEventListener('click', pegarConteudo)
+//--------------------------------------------------------------------
+
+function guardarConteudo() {
+  const pixelContent = document.querySelector('#pixel-board').innerHTML;
+  localStorage.setItem('conteudo', pixelContent);
+}
+
+function substituiConteudo() {
+  const reserva = localStorage.getItem('conteudo')
+  localStorage.setItem('conteudo-reserva', reserva)
+}
+
+pixelBoard.addEventListener('click', ()  => {
+  substituiConteudo()
+  guardarConteudo()
+});
+
+const undoButton = document.querySelector('#save');
+
+function pegarConteudo() {
+    document.querySelector('#pixel-board').innerHTML = localStorage.getItem('conteudo-reserva');
+}
+undoButton.addEventListener('click', pegarConteudo);
