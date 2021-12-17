@@ -380,6 +380,11 @@ const undoButton = document.querySelector('#save');
 function pegarConteudo() {
     document.querySelector('#pixel-board').innerHTML = localStorage.getItem('conteudo-reserva');
 }
+
+function voltarConteudo() {
+  document.querySelector('#pixel-board').innerHTML = localStorage.getItem('conteudo');
+}
+
 undoButton.addEventListener('click', () => {
 pegarConteudo()
 const valores = Math.sqrt(pixelBoard.childElementCount)
@@ -388,3 +393,6 @@ document.querySelector('#pixel-board').style.gridTemplateColumns = `repeat(${val
 document.querySelector('#pixel-board').style.gridTemplateRows = `repeat(${valores}, 1fr)`
 // document.querySelector('#board-size').value = '' + Math.sqrt(pixelBoard.childElementCount)
 });
+
+const redo = document.querySelector('#add');
+redo.addEventListener('click', voltarConteudo)
