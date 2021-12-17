@@ -151,8 +151,7 @@ pixelBoard.addEventListener('click', () => {
     }
   }
 })
-
-/* Quando a lata de tinta é selecionada, ela recebe a classe 'uso' e as outras ferramentas são excluidas da classe. Então, com essa contendo essa classe, caso clique dentro do pixel board, todas as divs serão preenchidas com a cor de background do elemento da classe selected. */
+// /* Quando a lata de tinta é selecionada, ela recebe a classe 'uso' e as outras ferramentas são excluidas da classe. Então, com essa contendo essa classe, caso clique dentro do pixel board, todas as divs serão preenchidas com a cor de background do elemento da classe selected. */
 
 const eraser = document.querySelector('#eraser');
 eraser.addEventListener('click', () => {

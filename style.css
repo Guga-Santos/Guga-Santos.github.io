@@ -163,7 +163,12 @@ body{
   bottom: 5px;
   left: 1px;
   position: relative;
+}
 
+#inputColor:hover {
+  cursor: pointer;
+  width: 133px;
+  height: 26px;
 }
 
 .color {
@@ -172,6 +177,11 @@ body{
   width: 28px;
   display: inline-block;
   box-shadow: black 1px 1px 1px;
+}
+
+.color:hover {
+  height: 24px;
+  width: 27px;
 }
 
 .color:active {
