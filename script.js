@@ -1,3 +1,5 @@
+
+
 const pixelBoard = document.querySelector('#pixel-board');
 window.onload = localStorage.removeItem('conteudo')
 window.onload = localStorage.removeItem('conteudo-reserva')
