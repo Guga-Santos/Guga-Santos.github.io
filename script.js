@@ -1,4 +1,6 @@
 const pixelBoard = document.querySelector('#pixel-board');
+window.onload = localStorage.removeItem('conteudo')
+window.onload = localStorage.removeItem('conteudo-reserva')
 //
 let draw = false
 
@@ -83,6 +85,11 @@ function clearBoard() {
   for (let i = 0; i < pixel.length; i += 1) {
     pixel[i].style.backgroundColor = 'grey';
   }
+  localStorage.removeItem('conteudo-reserva')
+  localStorage.removeItem('conteudo')
+  pixelBoard.style.gridTemplateColumns= "repeat(22, 1fr)"
+  pixelBoard.style.gridTemplateRows= "repeat(22, 1fr)"
+  document.querySelector('#board-size').value = '22'
 }
 button.addEventListener('click', clearBoard);
 //
@@ -117,7 +124,7 @@ soundIcon.addEventListener('click', () => {
 const informacoes = document.querySelector('#informacoes');
 
 informacoes.addEventListener('click', () => {
-  document.querySelector('#audio-container').innerHTML = '<audio id="myaudio" autoplay src="./midia/Menu.wav"></audio>'
+  document.querySelector('#audio-container2').innerHTML = '<audio id="myaudio" autoplay src="./midia/Menu.wav"></audio>'
   informacoes.innerHTML = '<p id="paragrafo">Este site foi feito por <a href="https://github.com/Guga-Santos" target="_blank">Guga Santos</a> como parte da conclusão do bloco 5 do curso de desenvolvimento web da <a href="http://www.betrybe.com" target="_blank">@Trybe</a>. </p>'
 })
 
@@ -340,7 +347,7 @@ miniContainer2.addEventListener('click', () => {
   bucket.classList.remove('uso')
   brush.classList.add('uso')
 })
-/* Quando clicado dentro do container que contem as miniaturas, o picel é selecionado. */
+/* Quando clicado dentro do container que contem as miniaturas, o pincel é selecionado. */
 
 // Tentando o undo:
 // function guardarConteudo() {
@@ -366,8 +373,12 @@ function guardarConteudo() {
 }
 
 function substituiConteudo() {
+  const pixelContent = document.querySelector('#pixel-board').innerHTML;
   const reserva = localStorage.getItem('conteudo')
   localStorage.setItem('conteudo-reserva', reserva)
+  if(window.localStorage.conteudo == null) {
+    localStorage.setItem('conteudo-reserva', pixelContent)
+  }
 }
 
 pixelBoard.addEventListener('click', ()  => {
