@@ -17,12 +17,14 @@ function numeroGrid(n) {
       div.style.backgroundColor = select;
     }
     });
+    // Caso draw seja verdadeiro, e será verdadeiro quando o botão do mouse estiver pressionado (ver abaixo da function), ele preenche a div com a cor do background de quem estiver com a classe 'selected'
     div.addEventListener('click', () => {
       const select = document.querySelector('.selected').style.backgroundColor;
       if(!draw) { 
       div.style.backgroundColor = select;
     }
     });
+    // Quando clicado, caso draw seja falso (falso porque no clique há, também, o mouseUp), ele preenche a div com a cor do background de quem estiver com a classe selected.
     pixelBoard.appendChild(div);
   }
 }
@@ -95,7 +97,7 @@ function clearBoard() {
 }
 button.addEventListener('click', clearBoard);
 //
-/* ^^^^^ Caso o elemento com a classe 'button' sejá clicado, todos os pixel receberão o backgroundColor 'grey' */
+/* ^^^^^ Caso o elemento com a classe 'button' sejá clicado, todos os pixel receberão o backgroundColor 'grey' e o grid recebe o value inicial de 22 */
 //
 const boardSizeX = document.querySelector('#board-size');
 
@@ -178,7 +180,7 @@ pixelBoard.addEventListener('mouseover', (e) => {
   }
 }
 })
-/* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso', onde o mouse clicar será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse clicar seá acrescido do background de quem tiver a classe 'selected'. */
+/* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso',  onde o mouse passar por cima será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse passar por cima será acrescido do background de quem tiver a classe 'selected'. */
 
 pixelBoard.addEventListener('mousedown', (e) => {
   if(!draw && e.target.id == '') { 
@@ -189,7 +191,7 @@ pixelBoard.addEventListener('mousedown', (e) => {
   }
 }
 })
-/* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso', onde o mouse passar por cima será acrescido o background grey, caso seja o brush que tenha a classe 'uso', onde o mouse passar por cima será acrescido do background de quem tiver a classe 'selected'. */
+/* Caso draw seja verdadeiro(mouse clicado), verdadeiro porque inicialmente é falso, e não tem id (porque pixelboard tem id): se é a borracha que contem a classe 'uso',onde o mouse clicar será acrescido o background grey, caso seja o brush que tenha a classe 'uso',  onde o mouse clicar será acrescido do background de quem tiver a classe 'selected'. */
 //
 const greenToddy = document.querySelector('#greenToddy');    
 greenToddy.addEventListener('click', () => {
@@ -317,7 +319,7 @@ feather.addEventListener('click', () => {
   }
 })
 
-/* ^^^ Quando houver um clique duplo no elemento de id 'feather', a classe de todos os filhos de feather será 'pixel', o pixel board receberá 22 numero de colunas e 22 numeros de linhas e o valor do board-size também será 22. O conteúdo do pixel boarde será definido como o do feather e a classe de todos os filhos de feather será 'pixel-E'. Recebem a classe 'pixel' para que sejam alteraveis dentro do quadro pixelboard e recebem a classe 'pixel-e' para que não sejam alterados dentro do quadro 'feather'.
+/* ^^^ Quando houver um clique duplo no elemento de id 'feather', a classe de todos os filhos de feather será 'pixel', o pixel board receberá 22 numero de colunas e 22 numeros de linhas e o valor do board-size também será 22. O conteúdo do pixel board será definido como o do feather e a classe de todos os filhos de feather será 'pixel-E'. Recebem a classe 'pixel' para que sejam alteraveis dentro do quadro pixelboard e recebem a classe 'pixel-e' para que não sejam alterados dentro do quadro 'feather'.
 
 Isso serve para todos os outros id's acima.*/
 
@@ -333,7 +335,7 @@ pixelBoard.addEventListener('contextmenu', (e) => {
     brush.classList.add('uso')
   }
 })
-/* Quando clicar com o botão direito, ele irá alterar entre pincel e borracha. */
+/* Quando clicar com o botão direito, ele irá alterar entre pincel e borracha. *-*-*-*-*VER*-*-*-*-* Adicionar bg da borracha como a penultima cor selecionada, talvez. */  
 
 const miniContainer = document.querySelector('#container-mini');
 miniContainer.addEventListener('click', () => {
@@ -348,30 +350,15 @@ miniContainer2.addEventListener('click', () => {
   bucket.classList.remove('uso')
   brush.classList.add('uso')
 })
-/* Quando clicado dentro do container que contem as miniaturas, o pincel é selecionado. */
 
-// Tentando o undo:
-// function guardarConteudo() {
-//   const htmlContent = document.querySelector('#middleSection').innerHTML;
-//   localStorage.setItem('conteudo', htmlContent);
-// }
-// const saveButton = document.querySelector('#save');
-// saveButton.addEventListener('click', guardarConteudo);
-// const addButton = document.querySelector('#add');
-// const saved = localStorage.getItem('conteudo');
-// function pegarConteudo() {
-// if (saved) {
-//   const htmlContent1 = document.querySelector('#middleSection');
-//   htmlContent1.innerHTML = saved;
-// }
-// }
-// addButton.addEventListener('click', pegarConteudo)
-//--------------------------------------------------------------------
+// Quando clicado em uma das miniaturas, a ferramenta selecionada se torne o brush.
 
 function guardarConteudo() {
   const pixelContent = document.querySelector('#pixel-board').innerHTML;
   localStorage.setItem('conteudo', pixelContent);
 }
+
+// Guarda o conteúdo no localstorage.
 
 function substituiConteudo() {
   const pixelContent = document.querySelector('#pixel-board').innerHTML;
@@ -381,6 +368,7 @@ function substituiConteudo() {
     localStorage.setItem('conteudo-reserva', pixelContent)
   }
 }
+// Guarda o conteudo-reserva como uma cópia do conteudo. Caso conteudo seja null, faz uma cópia do innerHTML do pixel-board.
 
 pixelBoard.addEventListener('click', ()  => {
   substituiConteudo()
@@ -403,8 +391,9 @@ const valores = Math.sqrt(pixelBoard.childElementCount)
 document.querySelector('#board-size').value = valores
 document.querySelector('#pixel-board').style.gridTemplateColumns = `repeat(${valores}, 1fr)`
 document.querySelector('#pixel-board').style.gridTemplateRows = `repeat(${valores}, 1fr)`
-// document.querySelector('#board-size').value = '' + Math.sqrt(pixelBoard.childElementCount)
 });
+// Quando clicado no botão de Undo, o pixel board se torna o conteudo reserva, o valor do input 'board-size' se torna a raiz quadrada do número dos elementos filhos do pixel board (caso o número dos elementos filhos, por exemplo, seja 484, o valor será 22) e, como fiz o pixel-board através de grid, tive que fazer o mesmo esquema nos grid-templates do css do elemento pixel-board.
 
 const redo = document.querySelector('#add');
 redo.addEventListener('click', voltarConteudo)
+// Quando clicado no 'botão' Redo, ele chama a função voltar conteudo.
